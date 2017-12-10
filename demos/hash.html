@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.8.0/sha256.min.js"></script>
+        <style>
+            #input {
+                font-family: Courier;
+                width: 100%;
+                border: 0;
+                border: 1px solid #EEE;
+                padding: 10px;
+            }
+            #output {
+                margin: 40px 0;
+                font-family: Courier;
+                width: 100%;
+                font-weight: 800;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="output"></div>
+        <input id="input"/>
+        <script>
+            input = document.getElementById('input')
+            output = document.getElementById('output')
+            input.addEventListener('keyup', () => {
+                output.innerHTML = 'Hash: ' + sha256(input.value).toUpperCase()
+            })
+            output.innerHTML = 'Hash: ' + sha256(input.value).toUpperCase()
+        </script>
+    </body>
+</html>
